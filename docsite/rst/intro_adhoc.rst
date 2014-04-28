@@ -130,13 +130,13 @@ To transfer a file directly to many different servers::
 If you use playbooks, you can also take advantage of the ``template`` module,
 which takes this another step further.  (See module and playbook documentation).
 
-The ``file`` module allows changing ownership and permissions on files.  These
+The ``file`` module allows changing ownership and permissions on existing files.  These
 same options can be passed directly to the ``copy`` module as well::
 
     $ ansible webservers -m file -a "dest=/srv/foo/a.txt mode=600"
     $ ansible webservers -m file -a "dest=/srv/foo/b.txt mode=600 owner=mdehaan group=mdehaan"
 
-The ``file`` module can also create directories, similar to ``mkdir -p``::
+The ``file`` module can also be used to create directories, similar to ``mkdir -p``::
 
     $ ansible webservers -m file -a "dest=/path/to/c mode=755 owner=mdehaan group=mdehaan state=directory"
 
